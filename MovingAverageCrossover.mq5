@@ -87,7 +87,7 @@ void openTrade(int orderType) {
       request.price = price;
       request.sl = (orderType == ORDER_TYPE_BUY) ? price - stopLoss * Point() : price + stopLoss * Point();
       request.tp = (orderType == ORDER_TYPE_BUY) ? price + takeProfit * Point() : price - takeProfit * Point();
-      request.type = orderType;
+      request.type = (ENUM_ORDER_TYPE) orderType;
       request.type_filling = ORDER_FILLING_IOC;
       request.symbol = Symbol();
       request.volume = lotSize;
